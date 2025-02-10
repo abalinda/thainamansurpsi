@@ -1,1 +1,1 @@
-Website for thainamansurpsi.com
+Website for thainamansurpsi.com. All rights reserved
