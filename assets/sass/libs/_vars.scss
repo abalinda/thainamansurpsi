@@ -1,0 +1,127 @@
+// Misc.
+	$misc: (
+		max-spotlights:		10,
+		max-features:		10,
+		z-index-base:		10000
+	);
+
+// Duration.
+	$duration: (
+		transitions:		0.2s,
+		menu:				0.5s,
+		fadein:				3s
+	);
+
+// Size.
+	$size: (
+		element-height:		2.75em,
+		element-margin:		2em,
+		letter-spacing:		0.075em,
+		letter-spacing-alt:	0.225em
+	);
+
+// Font.
+	$font: (
+		family:				('Cardo', serif),
+		family-fixed:		('Cardo', monospace),
+		weight:				400,
+		weight-bold:		700,
+		weight-extrabold:	800
+	);
+
+// Palette.
+	$palette: (
+		// Base colors.
+		bg:					#D7D1C3,  // Off White as main background
+		fg:					#000000,  // Black for primary text
+		fg-bold:			#000000,
+		fg-light:			rgba(0, 0, 0, 0.5),
+		border:				#000000,
+		border-bg:			rgba(0, 0, 0, 0.25),
+		border2:			#000000,
+		border2-bg:			rgba(0, 0, 0, 0.5),
+
+		// Accent 1: primary accent using MARROM.
+		accent1: (
+			bg:				#5B412E,  // MARROM
+			fg-bold:		#ffffff,
+			fg:				mix(#5B412E, #ffffff, 25%),
+			fg-light:		mix(#5B412E, #ffffff, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 2: secondary accent using Azul.
+		accent2: (
+			bg:				#608581,  // Azul
+			fg-bold:		#ffffff,
+			fg:				mix(#608581, #ffffff, 25%),
+			fg-light:		mix(#608581, #ffffff, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 3: tertiary accent using Verde.
+		accent3: (
+			bg:				#706C46,  // Verde
+			fg-bold:		#ffffff,
+			fg:				mix(#706C46, #ffffff, 25%),
+			fg-light:		mix(#706C46, #ffffff, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 4: a lighter variation of Azul.
+		accent4: (
+			bg:				lighten(#608581, 15%),
+			fg-bold:		#000000,
+			fg:				mix(lighten(#608581, 15%), #000000, 25%),
+			fg-light:		mix(lighten(#608581, 15%), #000000, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 5: a darker variation of Verde.
+		accent5: (
+			bg:				darken(#706C46, 10%),
+			fg-bold:		#ffffff,
+			fg:				mix(darken(#706C46, 10%), #ffffff, 25%),
+			fg-light:		mix(darken(#706C46, 10%), #ffffff, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 6: a darker variation of MARROM.
+		accent6: (
+			bg:				darken(#5B412E, 10%),
+			fg-bold:		#ffffff,
+			fg:				mix(darken(#5B412E, 10%), #ffffff, 25%),
+			fg-light:		mix(darken(#5B412E, 10%), #ffffff, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		),
+
+		// Accent 7: a contrasting variant using Off White.
+		accent7: (
+			bg:				#D7D1C3,  // Off White
+			fg-bold:		#000000,
+			fg:				mix(#000000, #D7D1C3, 25%),
+			fg-light:		mix(#000000, #D7D1C3, 40%),
+			border:			rgba(0, 0, 0, 0.125),
+			border-bg:		rgba(255, 255, 255, 0.075),
+			border2:		rgba(0, 0, 0, 0.25),
+			border2-bg:		rgba(255, 255, 255, 0.2)
+		)
+	);
