@@ -2910,6 +2910,9 @@ body.is-menu-visible #menu {
   z-index: 0;
   opacity: 0.95;
 }
+.lang-en #banner:before {
+  background-image: url("../../images/tm-logotipo-horizontal-simplificado-marrom.png");
+}
 #banner h2 {
   -moz-transform: scale(1);
   -webkit-transform: scale(1);

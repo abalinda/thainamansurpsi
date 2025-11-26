@@ -1603,7 +1603,7 @@
     background: _palette(bg);  // Using the bg color variable
 	
 	
-    // Add logo as background
+    // Add logo as background - default Portuguese
     &:before {
         content: '';
         background-image: url('../../images/tm-logotipo-principal-marrom.png');
@@ -1618,6 +1618,13 @@
         height: 90%;  // Adjust as needed
         z-index: 0;
         opacity: 0.95;  // Adjust for desired visibility
+    }
+    
+    // English version uses horizontal simplified logo
+    .lang-en & {
+        &:before {
+            background-image: url('../../images/tm-logotipo-horizontal-simplificado-marrom.png');
+        }
     }
 
     h2 {
