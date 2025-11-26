@@ -7,9 +7,9 @@
 
 @font-face {
     font-family: 'Cardo';
-    src: url('/assets/fonts/CARDO/Cardo-Regular.ttf') format('truetype'),
-         url('/assets/fonts/CARDO/Cardo-Bold.ttf') format('truetype'),
-         url('/assets/fonts/CARDO/Cardo-Italic.ttf') format('truetype');
+    src: url('../fonts/CARDO/Cardo-Regular.ttf') format('truetype'),
+         url('../fonts/CARDO/Cardo-Bold.ttf') format('truetype'),
+         url('../fonts/CARDO/Cardo-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -1606,7 +1606,7 @@
     // Add logo as background
     &:before {
         content: '';
-        background-image: url('/images/tm-logotipo-principal-marrom.png');  // Update path as needed
+        background-image: url('../../images/tm-logotipo-principal-marrom.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1981,7 +1981,7 @@ body.is-preload {
 
 	body.landing {
 		#page-wrapper {
-			// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+			// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../thainamansurpsi/images/banner.jpg")'));
 			background-attachment: fixed;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -2002,7 +2002,7 @@ body.is-preload {
 
 			#banner,
 			.wrapper.style4 {
-				// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+				// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../thainamansurpsi/images/banner.jpg")'));
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: cover;

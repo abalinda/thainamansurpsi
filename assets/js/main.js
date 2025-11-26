@@ -44,10 +44,14 @@
 		}
 
 	// Scrolly.
+		var scrollyOffset = $header.outerHeight();
+		$window.on('resize', function() {
+			scrollyOffset = $header.outerHeight();
+		});
 		$('.scrolly')
 			.scrolly({
 				speed: 1500,
-				offset: $header.outerHeight()
+				offset: function() { return scrollyOffset; }
 			});
 
 	// Menu.
