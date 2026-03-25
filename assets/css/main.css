@@ -1506,14 +1506,6 @@ input[type=radio] {
 input[type=checkbox] + label,
 input[type=radio] + label {
   text-decoration: none;
-  color: #000000;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 400;
-  padding-left: 2.4em;
-  padding-right: 0.75em;
-  position: relative;
 }
 input[type=checkbox] + label:before,
 input[type=radio] + label:before {
@@ -1527,6 +1519,17 @@ input[type=radio] + label:before {
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+input[type=checkbox] + label,
+input[type=radio] + label {
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 2.4em;
+  padding-right: 0.75em;
+  position: relative;
 }
 input[type=checkbox] + label:before,
 input[type=radio] + label:before {
@@ -1603,8 +1606,6 @@ input[type=radio] + label:before {
 /* Icon */
 .icon {
   text-decoration: none;
-  border-bottom: none;
-  position: relative;
 }
 .icon:before {
   -moz-osx-font-smoothing: grayscale;
@@ -1617,6 +1618,10 @@ input[type=radio] + label:before {
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
+}
+.icon {
+  border-bottom: none;
+  position: relative;
 }
 .icon > .label {
   display: none;
@@ -2393,7 +2398,6 @@ button:disabled,
 .wrapper.style3 {
   background-color: rgb(80.6153846154, 77.7362637363, 50.3846153846);
   color: rgb(211.4038461538, 210.6840659341, 203.8461538462);
-  text-align: center;
 }
 .wrapper.style3 strong, .wrapper.style3 b {
   color: #ffffff;
@@ -2514,6 +2518,9 @@ button:disabled,
   .wrapper.style3 .features li {
     border-top-color: rgba(0, 0, 0, 0.125);
   }
+}
+.wrapper.style3 {
+  text-align: center;
 }
 .wrapper.style4 {
   background-color: transparent;
@@ -2894,7 +2901,6 @@ body.is-menu-visible #menu {
   position: relative;
   text-align: center;
   background: #D7D1C3;
-  /* Top and bottom horizontal lines */
 }
 #banner:before {
   content: "";
@@ -2906,8 +2912,8 @@ body.is-menu-visible #menu {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 90%;
+  width: 70%;
+  height: 80%;
   z-index: 0;
   opacity: 0.95;
 }
@@ -3032,8 +3038,8 @@ body.is-menu-visible #menu {
     padding: 7em 3em 5em 3em;
   }
   #banner:before {
-    width: 90%;
-    height: 100%;
+    width: 80%;
+    height: 70%;
   }
   #banner h2 {
     font-size: 1.25em;
@@ -3044,6 +3050,9 @@ body.is-menu-visible #menu {
   #banner .more {
     display: none;
   }
+}
+#banner {
+  /* Top and bottom horizontal lines */
 }
 #banner .banner-line-top,
 #banner .banner-line-bottom {
@@ -3064,6 +3073,56 @@ body.is-menu-visible #menu {
   bottom: 20%;
   transform-origin: right center;
   animation: lineFromRight 1s forwards ease-in-out;
+}
+#banner .banner-cta {
+  margin-top: auto;
+  margin-bottom: clamp(1rem, 2vh, 4.75rem);
+  align-self: center;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  padding: 1em 3.5em 1.7em;
+  height: auto;
+  line-height: 1.2;
+  overflow: visible;
+  background-color: rgb(57.1240875912, 40.802919708, 28.8759124088);
+  color: #ffffff;
+  box-shadow: none;
+  min-width: 25rem;
+  -moz-transition: opacity 0.45s ease, -moz-transform 0.45s ease, box-shadow 0.2s ease;
+  -webkit-transition: opacity 0.45s ease, -webkit-transform 0.45s ease, box-shadow 0.2s ease;
+  -ms-transition: opacity 0.45s ease, -ms-transform 0.45s ease, box-shadow 0.2s ease;
+  transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.2s ease;
+}
+#banner .banner-cta:hover {
+  -moz-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+#banner .banner-cta:after {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0.75em;
+  background-image: url("../../images/arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
+@media screen and (max-width: 736px) {
+  #banner .banner-cta {
+    margin-bottom: 1.25rem;
+    padding: 0.8em 2.25em 1.4em;
+    min-width: auto;
+  }
 }
 
 /* Keyframes for line animations */
@@ -3090,6 +3149,13 @@ body.is-menu-visible #menu {
   .banner-line-bottom {
     bottom: 10%;
   }
+}
+body.is-preload #banner .banner-cta {
+  opacity: 0;
+  -moz-transform: translateY(28px);
+  -webkit-transform: translateY(28px);
+  -ms-transform: translateY(28px);
+  transform: translateY(28px);
 }
 body.is-preload #banner h2 {
   -moz-transform: scale(0.95);
@@ -3358,6 +3424,16 @@ body.is-mobile.landing #footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+:root {
+  --header-offset: 5.5em;
+}
+
+#sobre,
+#terapia,
+#agendamento {
+  scroll-margin-top: var(--header-offset);
 }
 
 html {

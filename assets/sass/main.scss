@@ -1348,6 +1348,7 @@
 
 		&.style3 {
 			@include wrapper(accent5);
+			text-align: center;
 		}
 
 		&.style4 {
@@ -1614,8 +1615,8 @@
         top: 50%;
         left: 50%;
         transform:translate(-50%, -50%);
-        width: 80%;  // Adjust as needed
-        height: 90%;  // Adjust as needed
+        width: 70%;  // Adjust as needed
+        height: 80%;  // Adjust as needed
         z-index: 0;
         opacity: 0.95;  // Adjust for desired visibility
     }
@@ -1728,8 +1729,8 @@
         // min-height: 0;
 
         &:before {
-            width: 90%;  // Adjust logo size for mobile
-            height: 100%;
+            width: 80%;  // reduce to keep CTA clear
+            height: 70%;
         }
 
         h2 {
@@ -1768,6 +1769,52 @@
         transform-origin: right center;
         animation: lineFromRight 1s forwards ease-in-out;
     }
+
+    .banner-cta {
+        margin-top: auto;
+        margin-bottom: clamp(1rem, 2vh, 4.75rem);
+        align-self: center;
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35em;
+        padding: 1em 3.5em 1.7em;
+        height: auto;
+        line-height: 1.2;
+        overflow: visible;
+        background-color: _palette(accent6, bg);
+        color: _palette(accent6, fg-bold);
+        box-shadow: none;
+        min-width: 25rem;
+        @include vendor('transition', ('opacity 0.45s ease', 'transform 0.45s ease', 'box-shadow 0.2s ease'));
+
+        &:hover {
+            @include vendor('transform', 'translateY(-4px)');
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            margin-top: 0.75em;
+            background-image: url('../../images/arrow.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        @include breakpoint('<=small') {
+            margin-bottom: 1.25rem;
+            padding: 0.8em 2.25em 1.4em;
+            min-width: auto;
+        }
+    }
 }
 
 /* Keyframes for line animations */
@@ -1792,6 +1839,11 @@
 
 body.is-preload {
     #banner {
+        .banner-cta {
+            opacity: 0;
+            @include vendor('transform', 'translateY(28px)');
+        }
+
         h2 {
             @include vendor('transform', 'scale(0.95)');
             opacity: 0;
@@ -2081,6 +2133,16 @@ border-radius: 6px;
 		margin-right: auto;
 	  }
 	}
+  }
+
+  :root {
+    --header-offset: 5.5em;
+  }
+
+  #sobre,
+  #terapia,
+  #agendamento {
+    scroll-margin-top: var(--header-offset);
   }
 
   html {

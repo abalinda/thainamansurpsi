@@ -96,7 +96,7 @@
 			</div>
 			<div class="banner-line-top"></div>
 			<div class="banner-line-bottom"></div>
-			<a href="#agendamento" class="more scrolly">Entre em contato</a>
+			<a href="#agendamento" class="button scrolly banner-cta primary">Agendar</a>
 		</section>
 
 		<!-- About Section -->
@@ -294,6 +294,18 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
+
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // PostHog - Track WhatsApp button clicks
+        const whatsappBtn = document.querySelector('a[href^="https://wa.me/"]');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', function() {
+                posthog.capture('contact_button_clicked', { method: 'whatsapp' });
+            });
+        }
+    });
+</script>
 </body>
 
 </html>

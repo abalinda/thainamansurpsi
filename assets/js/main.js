@@ -44,15 +44,19 @@
 		}
 
 	// Scrolly.
-		var scrollyOffset = $header.outerHeight();
-		$window.on('resize', function() {
-			scrollyOffset = $header.outerHeight();
-		});
-		$('.scrolly')
-			.scrolly({
-				speed: 1500,
-				offset: function() { return scrollyOffset; }
+		// Prefer native smooth scroll when available (faster and less jank).
+		var supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+		if (!supportsNativeSmoothScroll) {
+			var scrollyOffset = $header.outerHeight();
+			$window.on('resize', function() {
+				scrollyOffset = $header.outerHeight();
 			});
+			$('.scrolly')
+				.scrolly({
+					speed: 700,
+					offset: function() { return scrollyOffset; }
+				});
+		}
 
 	// Menu.
 		$('#menu')
