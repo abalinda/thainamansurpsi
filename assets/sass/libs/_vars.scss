@@ -1,3 +1,9 @@
+@use 'sass:color';
+
+$accent4-bg: color.adjust(#608581, $lightness: 15%);
+$accent5-bg: color.adjust(#706C46, $lightness: -10%);
+$accent6-bg: color.adjust(#5B412E, $lightness: -10%);
+
 // Misc.
 	$misc: (
 		max-spotlights:		10,
@@ -45,8 +51,8 @@
 		accent1: (
 			bg:				#5B412E,  // MARROM
 			fg-bold:		#ffffff,
-			fg:				mix(#5B412E, #ffffff, 25%),
-			fg-light:		mix(#5B412E, #ffffff, 40%),
+			fg:				color.mix(#5B412E, #ffffff, $weight: 25%),
+			fg-light:		color.mix(#5B412E, #ffffff, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -57,8 +63,8 @@
 		accent2: (
 			bg:				#608581,  // Azul
 			fg-bold:		#ffffff,
-			fg:				mix(#608581, #ffffff, 25%),
-			fg-light:		mix(#608581, #ffffff, 40%),
+			fg:				color.mix(#608581, #ffffff, $weight: 25%),
+			fg-light:		color.mix(#608581, #ffffff, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -69,8 +75,8 @@
 		accent3: (
 			bg:				#706C46,  // Verde
 			fg-bold:		#ffffff,
-			fg:				mix(#706C46, #ffffff, 25%),
-			fg-light:		mix(#706C46, #ffffff, 40%),
+			fg:				color.mix(#706C46, #ffffff, $weight: 25%),
+			fg-light:		color.mix(#706C46, #ffffff, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -79,10 +85,10 @@
 
 		// Accent 4: a lighter variation of Azul.
 		accent4: (
-			bg:				lighten(#608581, 15%),
+			bg:				$accent4-bg,
 			fg-bold:		#000000,
-			fg:				mix(lighten(#608581, 15%), #000000, 25%),
-			fg-light:		mix(lighten(#608581, 15%), #000000, 40%),
+			fg:				color.mix($accent4-bg, #000000, $weight: 25%),
+			fg-light:		color.mix($accent4-bg, #000000, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -91,10 +97,10 @@
 
 		// Accent 5: a darker variation of Verde.
 		accent5: (
-			bg:				darken(#706C46, 10%),
+			bg:				$accent5-bg,
 			fg-bold:		#ffffff,
-			fg:				mix(darken(#706C46, 10%), #ffffff, 25%),
-			fg-light:		mix(darken(#706C46, 10%), #ffffff, 40%),
+			fg:				color.mix($accent5-bg, #ffffff, $weight: 25%),
+			fg-light:		color.mix($accent5-bg, #ffffff, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -103,10 +109,10 @@
 
 		// Accent 6: a darker variation of MARROM.
 		accent6: (
-			bg:				darken(#5B412E, 10%),
+			bg:				$accent6-bg,
 			fg-bold:		#ffffff,
-			fg:				mix(darken(#5B412E, 10%), #ffffff, 25%),
-			fg-light:		mix(darken(#5B412E, 10%), #ffffff, 40%),
+			fg:				color.mix($accent6-bg, #ffffff, $weight: 25%),
+			fg-light:		color.mix($accent6-bg, #ffffff, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),
@@ -117,8 +123,8 @@
 		accent7: (
 			bg:				#D7D1C3,  // Off White
 			fg-bold:		#000000,
-			fg:				mix(#000000, #D7D1C3, 25%),
-			fg-light:		mix(#000000, #D7D1C3, 40%),
+			fg:				color.mix(#000000, #D7D1C3, $weight: 25%),
+			fg-light:		color.mix(#000000, #D7D1C3, $weight: 40%),
 			border:			rgba(0, 0, 0, 0.125),
 			border-bg:		rgba(255, 255, 255, 0.075),
 			border2:		rgba(0, 0, 0, 0.25),

@@ -2307,7 +2307,7 @@ button:disabled,
   background-color: rgba(255, 255, 255, 0.075);
 }
 .wrapper.style1 select {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(\"<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /></svg>\", '\"', \"'\"), \"%\", \"%25\"), \"<\", \"%3C\"), \">\", \"%3E\"), \"&\", \"%26\"), \"#\", \"%23\"), \"{\", \"%7B\"), \"}\", \"%7D\"), \";\", \"%3B\")");
 }
 .wrapper.style1 select option {
   color: #ffffff;
@@ -2434,7 +2434,7 @@ button:disabled,
   background-color: rgba(255, 255, 255, 0.075);
 }
 .wrapper.style3 select {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(\"<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /></svg>\", '\"', \"'\"), \"%\", \"%25\"), \"<\", \"%3C\"), \">\", \"%3E\"), \"&\", \"%26\"), \"#\", \"%23\"), \"{\", \"%7B\"), \"}\", \"%7D\"), \";\", \"%3B\")");
 }
 .wrapper.style3 select option {
   color: #ffffff;
@@ -2565,7 +2565,7 @@ button:disabled,
   background-color: rgba(255, 255, 255, 0.075);
 }
 .wrapper.style5 select {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(str-replace(\"<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /></svg>\", '\"', \"'\"), \"%\", \"%25\"), \"<\", \"%3C\"), \">\", \"%3E\"), \"&\", \"%26\"), \"#\", \"%23\"), \"{\", \"%7B\"), \"}\", \"%7D\"), \";\", \"%3B\")");
 }
 .wrapper.style5 select option {
   color: #000000;
@@ -2880,7 +2880,7 @@ body.is-menu-visible #menu {
 
 /* Banner */
 #banner {
-  padding: 6em 0 4em 0;
+  padding: 6em 0em 4em 0em;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -2889,10 +2889,13 @@ body.is-menu-visible #menu {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
+  -moz-justify-content: -moz-flex-end;
+  -webkit-justify-content: -webkit-flex-end;
+  -ms-justify-content: -ms-flex-end;
+  justify-content: flex-end;
+  --banner-top-space: clamp(4.5rem, 12vh, 7rem);
+  --banner-bottom-space: clamp(1rem, 4vh, 2rem);
+  --banner-cta-space: clamp(6.5rem, 16vh, 9.5rem);
   cursor: default;
   height: 100vh;
   min-height: 100vh;
@@ -2903,21 +2906,30 @@ body.is-menu-visible #menu {
   background: #D7D1C3;
 }
 #banner:before {
+  content: none;
+}
+#banner .inner {
+  -moz-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: var(--banner-top-space) clamp(2rem, 6vw, 5rem) clamp(1.5rem, 4vh, 3rem);
+}
+#banner .inner:before {
   content: "";
+  position: absolute;
+  inset: 0 clamp(2rem, 7vw, 6rem);
   background-image: url("../../images/tm-logotipo-principal-marrom.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 80%;
-  z-index: 0;
   opacity: 0.95;
 }
-.lang-en #banner:before {
+.lang-en #banner .inner:before {
   background-image: url("../../images/tm-logotipo-horizontal-simplificado-marrom.png");
 }
 #banner h2 {
@@ -3035,11 +3047,16 @@ body.is-menu-visible #menu {
 }
 @media screen and (max-width: 736px) {
   #banner {
-    padding: 7em 3em 5em 3em;
+    padding: 7em 0 0;
+    --banner-top-space: clamp(2rem, 8vh, 3.5rem);
+    --banner-bottom-space: max(1.5rem, calc(env(safe-area-inset-bottom) + 0.5rem));
+    --banner-cta-space: clamp(6rem, 19vh, 8rem);
   }
-  #banner:before {
-    width: 80%;
-    height: 70%;
+  #banner .inner {
+    padding: var(--banner-top-space) 1.25rem 1rem;
+  }
+  #banner .inner:before {
+    inset: 0 0.75rem;
   }
   #banner h2 {
     font-size: 1.25em;
@@ -3062,21 +3079,20 @@ body.is-menu-visible #menu {
   height: 3px;
   background-color: #5B412E;
   transform: scaleX(0);
-  z-index: 5; /* Ensure lines appear over the background logo */
+  z-index: 1;
 }
 #banner .banner-line-top {
-  top: 20%;
+  top: var(--banner-top-space);
   transform-origin: left center;
   animation: lineFromLeft 1s forwards ease-in-out;
 }
 #banner .banner-line-bottom {
-  bottom: 20%;
+  bottom: var(--banner-cta-space);
   transform-origin: right center;
   animation: lineFromRight 1s forwards ease-in-out;
 }
 #banner .banner-cta {
-  margin-top: auto;
-  margin-bottom: clamp(1rem, 2vh, 4.75rem);
+  margin: 0 auto var(--banner-bottom-space);
   align-self: center;
   position: relative;
   z-index: 2;
@@ -3085,18 +3101,25 @@ body.is-menu-visible #menu {
   align-items: center;
   justify-content: center;
   gap: 0.35em;
-  padding: 1em 3.5em 1.7em;
+  width: clamp(16rem, 32vw, 26rem);
+  max-width: calc(100% - 2rem);
+  min-width: 0;
+  padding: 0.8em 3.5em 1em;
   height: auto;
   line-height: 1.2;
   overflow: visible;
   background-color: rgb(57.1240875912, 40.802919708, 28.8759124088);
   color: #ffffff;
   box-shadow: none;
-  min-width: 25rem;
   -moz-transition: opacity 0.45s ease, -moz-transform 0.45s ease, box-shadow 0.2s ease;
   -webkit-transition: opacity 0.45s ease, -webkit-transform 0.45s ease, box-shadow 0.2s ease;
   -ms-transition: opacity 0.45s ease, -ms-transform 0.45s ease, box-shadow 0.2s ease;
   transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.2s ease;
+}
+@media screen and (min-width: 981px) {
+  #banner .banner-cta {
+    margin: 1 auto var(--banner-bottom-space);
+  }
 }
 #banner .banner-cta:hover {
   -moz-transform: translateY(-4px);
@@ -3110,7 +3133,7 @@ body.is-menu-visible #menu {
   display: block;
   width: 1.5em;
   height: 1.5em;
-  margin-top: 0.75em;
+  margin-top: 0.35em;
   background-image: url("../../images/arrow.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -3119,9 +3142,9 @@ body.is-menu-visible #menu {
 }
 @media screen and (max-width: 736px) {
   #banner .banner-cta {
-    margin-bottom: 1.25rem;
-    padding: 0.8em 2.25em 1.4em;
-    min-width: auto;
+    width: min(20rem, 100% - 2rem);
+    padding: 0.75em 2.25em 0.95em;
+    gap: 0.25em;
   }
 }
 
@@ -3143,11 +3166,18 @@ body.is-menu-visible #menu {
   }
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
-  .banner-line-top {
-    top: 10%;
+  #banner {
+    --banner-top-space: 2.5rem;
+    --banner-bottom-space: 0.75rem;
+    --banner-cta-space: 5.5rem;
   }
-  .banner-line-bottom {
-    bottom: 10%;
+  #banner .inner {
+    padding-top: 2.5rem;
+    padding-bottom: 0.75rem;
+  }
+  #banner .banner-cta {
+    width: min(19rem, 100% - 2rem);
+    padding: 0.65em 2.25em 0.85em;
   }
 }
 body.is-preload #banner .banner-cta {
@@ -3284,7 +3314,7 @@ body.is-mobile #main > header {
 /* Footer */
 #footer {
   padding: 2em 0 0.1em 0;
-  background-color: black;
+  background-color: hsl(0, 0%, -8%);
   text-align: center;
 }
 #footer .icons {

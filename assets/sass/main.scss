@@ -1,9 +1,5 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/vendor';
-@import 'libs/breakpoints';
-@import 'libs/html-grid';
+@use 'sass:color';
+@use 'libs' as *;
 
 @font-face {
     font-family: 'Cardo';
@@ -111,7 +107,7 @@
 		}
 
 	body {
-		background: _palette(bg);
+		background: site-palette(bg);
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -124,11 +120,11 @@
 	}
 
 	body, input, select, textarea {
-		color: _palette(fg);
-		font-family: _font(family);
+		color: site-palette(fg);
+		font-family: site-font(family);
 		font-size: 15pt;
-		font-weight: _font(weight);
-		letter-spacing: _size(letter-spacing);
+		font-weight: site-font(weight);
+		letter-spacing: site-size(letter-spacing);
 		line-height: 1.65em;
 
 		@include breakpoint('<=xlarge') {
@@ -141,12 +137,12 @@
 
 		@include breakpoint('<=small') {
 			font-size: 11pt;
-			letter-spacing: _size(letter-spacing) * 0.5;
+			letter-spacing: site-size(letter-spacing) * 0.5;
 		}
 	}
 
 	a {
-		@include vendor('transition', ('color #{_duration(transitions)} ease', 'border-bottom-color #{_duration(transitions)} ease'));
+		@include vendor('transition', ('color #{site-duration(transitions)} ease', 'border-bottom-color #{site-duration(transitions)} ease'));
 		border-bottom: dotted 1px;
 		color: inherit;
 		text-decoration: none;
@@ -157,8 +153,8 @@
 	}
 
 	strong, b {
-		color: _palette(fg-bold);
-		font-weight: _font(weight-bold);
+		color: site-palette(fg-bold);
+		font-weight: site-font(weight-bold);
 	}
 
 	em, i {
@@ -166,15 +162,15 @@
 	}
 
 	p {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
-		font-weight: _font(weight-extrabold);
-		letter-spacing: _size(letter-spacing-alt);
+		color: site-palette(fg-bold);
+		font-weight: site-font(weight-extrabold);
+		letter-spacing: site-size(letter-spacing-alt);
 		line-height: 1em;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		margin: 0 0 (site-size(element-margin) * 0.5) 0;
 		text-transform: uppercase;
 
 		a {
@@ -232,25 +228,25 @@
 
 	hr {
 		border: 0;
-		border-bottom: solid 2px _palette(border);
-		margin: (_size(element-margin) * 1.5) 0;
+		border-bottom: solid 2px site-palette(border);
+		margin: (site-size(element-margin) * 1.5) 0;
 
 		&.major {
-			margin: (_size(element-margin) * 2.25) 0;
+			margin: (site-size(element-margin) * 2.25) 0;
 		}
 	}
 
 	blockquote {
-		border-left: solid 4px _palette(border);
+		border-left: solid 4px site-palette(border);
 		font-style: italic;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
 	code {
-		background: _palette(border-bg);
+		background: site-palette(border-bg);
 		border-radius: 3px;
-		font-family: _font(family-fixed);
+		font-family: site-font(family-fixed);
 		font-size: 0.9em;
 		letter-spacing: 0;
 		margin: 0 0.25em;
@@ -259,9 +255,9 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: _font(family-fixed);
+		font-family: site-font(family-fixed);
 		font-size: 0.9em;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 
 		code {
 			display: block;
@@ -319,7 +315,7 @@
 
 	header {
 		p {
-			color: _palette(fg-light);
+			color: site-palette(fg-light);
 			position: relative;
 			top: -0.25em;
 		}
@@ -338,10 +334,10 @@
 		}
 
 		&.major {
-			margin: 0 0 (_size(element-margin) * 1.75) 0;
+			margin: 0 0 (site-size(element-margin) * 1.75) 0;
 
 			h2, h3, h4, h5, h6 {
-				border-bottom: solid 2px _palette(border);
+				border-bottom: solid 2px site-palette(border);
 				display: inline-block;
 				padding-bottom: 0em;
 				position: relative;
@@ -354,12 +350,12 @@
 			}
 
 			p {
-				color: _palette(fg);
+				color: site-palette(fg);
 				top: 0;
 			}
 
 			@include breakpoint('<=small') {
-				margin: 0 0 _size(element-margin) 0;
+				margin: 0 0 site-size(element-margin) 0;
 			}
 		}
 
@@ -373,15 +369,15 @@
 /* Form */
 
 	form {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 	}
 
 	label {
-		color: _palette(fg-bold);
+		color: site-palette(fg-bold);
 		display: block;
 		font-size: 0.9em;
-		font-weight: _font(weight-bold);
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		font-weight: site-font(weight-bold);
+		margin: 0 0 (site-size(element-margin) * 0.5) 0;
 	}
 
 	input[type="text"],
@@ -390,7 +386,7 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		background-color: _palette(border-bg);
+		background-color: site-palette(border-bg);
 		border-radius: 3px;
 		border: none;
 		color: inherit;
@@ -405,7 +401,7 @@
 		}
 
 		&:focus {
-			box-shadow: 0 0 0 2px _palette(accent1, bg);
+			box-shadow: 0 0 0 2px site-palette(accent1, bg);
 		}
 	}
 
@@ -413,8 +409,8 @@
 		background-size: 1.25em;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1em) center;
-		height: _size(element-height);
-		padding-right: _size(element-height);
+		height: site-size(element-height);
+		padding-right: site-size(element-height);
 		text-overflow: ellipsis;
 
 		&:focus {
@@ -432,7 +428,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: _size(element-height);
+		height: site-size(element-height);
 	}
 
 	textarea {
@@ -451,42 +447,42 @@
 
 		& + label {
 			@include icon(false, solid);
-			color: _palette(fg);
+			color: site-palette(fg);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-weight: _font(weight);
-			padding-left: (_size(element-height) * 0.6) + 0.75em;
+			font-weight: site-font(weight);
+			padding-left: (site-size(element-height) * 0.6) + 0.75em;
 			padding-right: 0.75em;
 			position: relative;
 
 			&:before {
-				background: _palette(border-bg);
+				background: site-palette(border-bg);
 				border-radius: 3px;
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
-				height: (_size(element-height) * 0.75);
+				height: (site-size(element-height) * 0.75);
 				left: 0;
-				line-height: (_size(element-height) * 0.75);
+				line-height: (site-size(element-height) * 0.75);
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: (_size(element-height) * 0.75);
+				width: (site-size(element-height) * 0.75);
 			}
 		}
 
 		&:checked + label {
 			&:before {
-				background: _palette(bg);
-				color: _palette(fg-bold);
+				background: site-palette(bg);
+				color: site-palette(fg-bold);
 				content: '\f00c';
 			}
 		}
 
 		&:focus + label {
 			&:before {
-				box-shadow: 0 0 0 2px _palette(accent1, bg);
+				box-shadow: 0 0 0 2px site-palette(accent1, bg);
 			}
 		}
 	}
@@ -508,22 +504,22 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: site-palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: site-palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: site-palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: site-palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
@@ -531,8 +527,8 @@
 
 	.box {
 		border-radius: 3px;
-		border: solid 2px _palette(border);
-		margin-bottom: _size(element-margin);
+		border: solid 2px site-palette(border);
+		margin-bottom: site-size(element-margin);
 		padding: 1.5em;
 
 		> :last-child,
@@ -578,7 +574,7 @@
 		&.major {
 			@include vendor('transform', 'rotate(-45deg)');
 			border-radius: 3px;
-			border: solid 2px _palette(border);
+			border: solid 2px site-palette(border);
 			display: inline-block;
 			font-size: 1.35em;
 			height: calc(3em + 2px);
@@ -598,15 +594,15 @@
 		}
 
 		&.style1 {
-			color: _palette(accent1, bg);
+			color: site-palette(accent1, bg);
 		}
 
 		&.style2 {
-			color: _palette(accent3, bg);
+			color: site-palette(accent3, bg);
 		}
 
 		&.style3 {
-			color: _palette(accent4, bg);
+			color: site-palette(accent4, bg);
 		}
 	}
 
@@ -646,7 +642,7 @@
 
 		&.fit {
 			display: block;
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0 0 site-size(element-margin) 0;
 			width: 100%;
 
 			img {
@@ -659,7 +655,7 @@
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 		padding-left: 1.25em;
 
 		li {
@@ -669,7 +665,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 		padding-left: 1em;
 
 		li {
@@ -681,7 +677,7 @@
 			padding-left: 0;
 
 			li {
-				border-top: solid 1px _palette(border);
+				border-top: solid 1px site-palette(border);
 				padding: 0.5em 0;
 
 				&:first-child {
@@ -693,7 +689,7 @@
 	}
 
 	dl {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 	}
 
 /* Actions */
@@ -702,11 +698,11 @@
 		@include vendor('display', 'flex');
 		cursor: default;
 		list-style: none;
-		margin-left: (_size(element-margin) * -0.5);
+		margin-left: (site-size(element-margin) * -0.5);
 		padding-left: 0;
 
 		li {
-			padding: 0 0 0 (_size(element-margin) * 0.5);
+			padding: 0 0 0 (site-size(element-margin) * 0.5);
 			vertical-align: middle;
 		}
 
@@ -727,7 +723,7 @@
 			margin-left: 0;
 
 			li {
-				padding: (_size(element-margin) * 0.5) 0 0 0;
+				padding: (site-size(element-margin) * 0.5) 0 0 0;
 
 				&:first-child {
 					padding-top: 0;
@@ -736,7 +732,7 @@
 		}
 
 		&.fit {
-			width: calc(100% + #{_size(element-margin) * 0.5});
+			width: calc(100% + #{site-size(element-margin) * 0.5});
 
 			li {
 				@include vendor('flex-grow', '1');
@@ -762,7 +758,7 @@
 				li {
 					@include vendor('flex-grow', '1');
 					@include vendor('flex-shrink', '1');
-					padding: (_size(element-margin) * 0.5) 0 0 0;
+					padding: (site-size(element-margin) * 0.5) 0 0 0;
 					text-align: center;
 					width: 100%;
 
@@ -829,17 +825,17 @@
 	}
 
 	table {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 site-size(element-margin) 0;
 		width: 100%;
 
 		tbody {
 			tr {
-				border: solid 1px _palette(border);
+				border: solid 1px site-palette(border);
 				border-left: 0;
 				border-right: 0;
 
 				&:nth-child(2n + 1) {
-					background-color: _palette(border-bg);
+					background-color: site-palette(border-bg);
 				}
 			}
 		}
@@ -849,19 +845,19 @@
 		}
 
 		th {
-			color: _palette(fg-bold);
+			color: site-palette(fg-bold);
 			font-size: 0.9em;
-			font-weight: _font(weight-bold);
+			font-weight: site-font(weight-bold);
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
 		}
 
 		thead {
-			border-bottom: solid 2px _palette(border);
+			border-bottom: solid 2px site-palette(border);
 		}
 
 		tfoot {
-			border-top: solid 2px _palette(border);
+			border-top: solid 2px site-palette(border);
 		}
 
 		&.alt {
@@ -870,7 +866,7 @@
 			tbody {
 				tr {
 					td {
-						border: solid 1px _palette(border);
+						border: solid 1px site-palette(border);
 						border-left-width: 0;
 						border-top-width: 0;
 
@@ -905,18 +901,18 @@
 	button,
 	.button {
 		@include vendor('appearance', 'none');
-		@include vendor('transition', ('background-color #{_duration(transitions)} ease-in-out', 'color #{_duration(transitions)} ease-in-out'));
+		@include vendor('transition', ('background-color #{site-duration(transitions)} ease-in-out', 'color #{site-duration(transitions)} ease-in-out'));
 		background-color: transparent;
 		border-radius: 3px;
 		border: 0;
-		box-shadow: inset 0 0 0 2px _palette(border);
-		color: _palette(fg-bold);
+		box-shadow: inset 0 0 0 2px site-palette(border);
+		color: site-palette(fg-bold);
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8em;
-		font-weight: _font(weight-bold);
+		font-weight: site-font(weight-bold);
 		height: 3.125em;
-		letter-spacing: _size(letter-spacing-alt);
+		letter-spacing: site-size(letter-spacing-alt);
 		line-height: 3.125em;
 		max-width: 30em;
 		padding: 0 2.75em;
@@ -928,11 +924,11 @@
 		text-overflow: ellipsis;
 
 		&:hover {
-			background-color: _palette(border-bg);
+			background-color: site-palette(border-bg);
 		}
 
 		&:active {
-			background-color: _palette(border2-bg);
+			background-color: site-palette(border2-bg);
 		}
 
 		&.icon {
@@ -954,16 +950,16 @@
 		}
 
 		&.primary {
-			background-color: _palette(accent6, bg);
+			background-color: site-palette(accent6, bg);
 			box-shadow: none !important;
-			color: _palette(accent6, fg-bold) !important;
+			color: site-palette(accent6, fg-bold) !important;
 
 			&:hover {
-				background-color: lighten(_palette(accent6, bg), 5) !important;
+				background-color: color.adjust(site-palette(accent6, bg), $lightness: 5%) !important;
 			}
 
 			&:active {
-				background-color: darken(_palette(accent6, bg), 5) !important;
+				background-color: color.adjust(site-palette(accent6, bg), $lightness: -5%) !important;
 			}
 		}
 
@@ -996,7 +992,7 @@
 			text-align: left;
 			width: 50%;
 
-			@for $i from 1 through _misc(max-features) {
+			@for $i from 1 through site-misc(max-features) {
 				$j: 0.035 * $i;
 
 				&:nth-child(#{$i}) {
@@ -1006,7 +1002,7 @@
 
 			&:before {
 				display: block;
-				color: _palette(accent2, bg);
+				color: site-palette(accent2, bg);
 				position: absolute;
 				left: 1.75em;
 				top: 2.75em;
@@ -1035,7 +1031,7 @@
 
 				&:before {
 					left: 0;
-					margin: 0 0 (_size(element-margin) * 0.5) 0;
+					margin: 0 0 (site-size(element-margin) * 0.5) 0;
 					position: relative;
 					top: 0;
 				}
@@ -1044,7 +1040,7 @@
 			@include breakpoint('<=small') {
 				@include padding(3em, 0);
 				background-color: transparent !important;
-				border-top: solid 2px _palette(border);
+				border-top: solid 2px site-palette(border);
 				width: 100%;
 
 				&:first-child {
@@ -1082,7 +1078,7 @@
 			@include vendor('flex-direction', 'row-reverse');
 		}
 
-		@for $i from 1 through _misc(max-spotlights) {
+		@for $i from 1 through site-misc(max-spotlights) {
 			$j: 0.075 * $i;
 
 			&:nth-child(#{$i}) {
@@ -1129,45 +1125,45 @@
 /* Wrapper */
 
 	@mixin wrapper($p) {
-		background-color: _palette($p, bg);
-		color: _palette($p, fg);
+		background-color: site-palette($p, bg);
+		color: site-palette($p, fg);
 
 		// Basic
 
 			strong, b {
-				color: _palette($p, fg-bold);
+				color: site-palette($p, fg-bold);
 			}
 
 			h2, h3, h4, h5, h6 {
-				color: _palette($p, fg-bold);
+				color: site-palette($p, fg-bold);
 			}
 
 			hr {
-				border-color: _palette($p, border);
+				border-color: site-palette($p, border);
 			}
 
 			blockquote {
-				border-color: _palette($p, border);
+				border-color: site-palette($p, border);
 			}
 
 			code {
-				background: _palette($p, border-bg);
+				background: site-palette($p, border-bg);
 			}
 
 		// Section/Article
 
 			header {
 				p {
-					color: _palette($p, fg-light);
+					color: site-palette($p, fg-light);
 				}
 
 				&.major {
 					h2, h3, h4, h5, h6 {
-						border-color: _palette($p, border);
+						border-color: site-palette($p, border);
 					}
 
 					p {
-						color: _palette($p, fg);
+						color: site-palette($p, fg);
 					}
 				}
 			}
@@ -1175,7 +1171,7 @@
 		// Form
 
 			label {
-				color: _palette($p, fg-bold);
+				color: site-palette($p, fg-bold);
 			}
 
 			input[type="text"],
@@ -1183,61 +1179,61 @@
 			input[type="email"],
 			select,
 			textarea {
-				background-color: _palette($p, border-bg);
+				background-color: site-palette($p, border-bg);
 			}
 
 			select {
-				background-image: svg-url("<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='#{_palette($p, border)}' /></svg>");
+				background-image: svg-url("<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='#{site-palette($p, border)}' /></svg>");
 
 				option {
-					color: _palette($p, fg-bold);
-					background: _palette($p, bg);
+					color: site-palette($p, fg-bold);
+					background: site-palette($p, bg);
 				}
 			}
 
 			input[type="checkbox"],
 			input[type="radio"], {
 				& + label {
-					color: _palette($p, fg);
+					color: site-palette($p, fg);
 
 					&:before {
-						background: _palette($p, border-bg);
+						background: site-palette($p, border-bg);
 					}
 				}
 
 				&:checked + label {
 					&:before {
-						background: _palette($p, fg-bold);
-						color: _palette($p, bg);
+						background: site-palette($p, fg-bold);
+						color: site-palette($p, bg);
 					}
 				}
 			}
 
 			::-webkit-input-placeholder {
-				color: _palette($p, fg-light) !important;
+				color: site-palette($p, fg-light) !important;
 			}
 
 			:-moz-placeholder {
-				color: _palette($p, fg-light) !important;
+				color: site-palette($p, fg-light) !important;
 			}
 
 			::-moz-placeholder {
-				color: _palette($p, fg-light) !important;
+				color: site-palette($p, fg-light) !important;
 			}
 
 			:-ms-input-placeholder {
-				color: _palette($p, fg-light) !important;
+				color: site-palette($p, fg-light) !important;
 			}
 
 			.formerize-placeholder {
-				color: _palette($p, fg-light) !important;
+				color: site-palette($p, fg-light) !important;
 			}
 
 		// Icon
 
 			.icon {
 				&.major {
-					border-color: _palette($p, border);
+					border-color: site-palette($p, border);
 				}
 			}
 
@@ -1246,7 +1242,7 @@
 			ul {
 				&.alt {
 					li {
-						border-color: _palette($p, border);
+						border-color: site-palette($p, border);
 					}
 				}
 			}
@@ -1256,31 +1252,31 @@
 			table {
 				tbody {
 					tr {
-						border-color: _palette($p, border);
+						border-color: site-palette($p, border);
 
 						&:nth-child(2n + 1) {
-							background-color: _palette($p, border-bg);
+							background-color: site-palette($p, border-bg);
 						}
 					}
 				}
 
 				th {
-					color: _palette($p, fg-bold);
+					color: site-palette($p, fg-bold);
 				}
 
 				thead {
-					border-color: _palette($p, border);
+					border-color: site-palette($p, border);
 				}
 
 				tfoot {
-					border-color: _palette($p, border);
+					border-color: site-palette($p, border);
 				}
 
 				&.alt {
 					tbody {
 						tr {
 							td {
-								border-color: _palette($p, border);
+								border-color: site-palette($p, border);
 							}
 						}
 					}
@@ -1294,15 +1290,15 @@
 			input[type="button"],
 			button,
 			.button {
-				box-shadow: inset 0 0 0 2px _palette($p, border);
-				color: _palette($p, fg-bold);
+				box-shadow: inset 0 0 0 2px site-palette($p, border);
+				color: site-palette($p, fg-bold);
 
 				&:hover {
-					background-color: _palette($p, border-bg);
+					background-color: site-palette($p, border-bg);
 				}
 
 				&:active {
-					background-color: _palette($p, border2-bg);
+					background-color: site-palette($p, border2-bg);
 				}
 			}
 
@@ -1311,7 +1307,7 @@
 			.features {
 				li {
 					@include breakpoint('<=small') {
-						border-top-color: _palette($p, border);
+						border-top-color: site-palette($p, border);
 					}
 				}
 			}
@@ -1343,7 +1339,7 @@
 		}
 
 		&.style2 {
-			background-color: _palette(bg);
+			background-color: site-palette(bg);
 		}
 
 		&.style3 {
@@ -1372,7 +1368,7 @@
 /* Page Wrapper + Menu */
 
 	#page-wrapper {
-		@include vendor('transition', 'opacity #{_duration(menu)} ease');
+		@include vendor('transition', 'opacity #{site-duration(menu)} ease');
 		opacity: 1;
 		padding-top: 3em;
 
@@ -1386,16 +1382,16 @@
 			position: fixed;
 			top: 0;
 			width: 100%;
-			z-index: _misc(z-index-base) + 1;
+			z-index: site-misc(z-index-base) + 1;
 		}
 	}
 
 	#menu {
 		@include vendor('transform', 'translateX(20em)');
-		@include vendor('transition', 'transform #{_duration(menu)} ease');
+		@include vendor('transition', 'transform #{site-duration(menu)} ease');
 		-webkit-overflow-scrolling: touch;
-		background: _palette(accent1, bg);
-		color: _palette(accent1, fg-bold);
+		background: site-palette(accent1, bg);
+		color: site-palette(accent1, fg-bold);
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -1404,14 +1400,14 @@
 		right: 0;
 		top: 0;
 		width: 20em;
-		z-index: _misc(z-index-base) + 2;
+		z-index: site-misc(z-index-base) + 2;
 
 		ul {
 			list-style: none;
 			padding: 0;
 
 			> li {
-				border-top: solid 1px _palette(accent1, border);
+				border-top: solid 1px site-palette(accent1, border);
 				margin: 0.5em 0 0 0;
 				padding: 0.5em 0 0 0;
 
@@ -1426,7 +1422,7 @@
 					color: inherit;
 					display: block;
 					font-size: 0.8em;
-					letter-spacing: _size(letter-spacing-alt);
+					letter-spacing: site-size(letter-spacing-alt);
 					outline: 0;
 					text-decoration: none;
 					text-transform: uppercase;
@@ -1475,18 +1471,18 @@
 /* Header */
 
 	#header {
-		@include vendor('transition', 'background-color #{_duration(transitions)} ease');
-		background: _palette(bg);
+		@include vendor('transition', 'background-color #{site-duration(transitions)} ease');
+		background: site-palette(bg);
 		height: 5em;
 		left: 0;
 		line-height: 3em;
 		position: fixed;
 		top: 0;
 		width: 100%;
-		z-index: _misc(z-index-base);
+		z-index: site-misc(z-index-base);
 
 		h1 {
-			@include vendor('transition', 'opacity #{_duration(transitions)} ease');
+			@include vendor('transition', 'opacity #{site-duration(transitions)} ease');
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
@@ -1525,10 +1521,10 @@
 
 					> a {
 						border: 0;
-						color: _palette(fg-bold);
+						color: site-palette(fg-bold);
 						display: block;
 						font-size: 0.8em;
-						letter-spacing: _size(letter-spacing-alt);
+						letter-spacing: site-size(letter-spacing-alt);
 						padding: 0 1.5em;
 						text-transform: uppercase;
 
@@ -1590,10 +1586,13 @@
 
 /* Banner */
 #banner {
-    @include padding(6em, 0, (0, 0, 0, 0));
+    @include padding(6em, 0em, (0, 0, 0, 0));
     @include vendor('display', 'flex');
     @include vendor('flex-direction', 'column');
-    @include vendor('justify-content', 'center');
+    @include vendor('justify-content', 'flex-end');
+    --banner-top-space: clamp(4.5rem, 12vh, 7rem);
+    --banner-bottom-space: clamp(1rem, 4vh, 2rem);
+    --banner-cta-space: clamp(6.5rem, 16vh, 9.5rem);
     cursor: default;
     height: 100vh;
     min-height: 100vh;
@@ -1601,29 +1600,37 @@
     overflow: hidden;
     position: relative;
     text-align: center;
-    background: _palette(bg);  // Using the bg color variable
+    background: site-palette(bg);  // Using the bg color variable
 	
 	
     // Add logo as background - default Portuguese
     &:before {
-        content: '';
-        background-image: url('../../images/tm-logotipo-principal-marrom.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform:translate(-50%, -50%);
-        width: 70%;  // Adjust as needed
-        height: 80%;  // Adjust as needed
-        z-index: 0;
-        opacity: 0.95;  // Adjust for desired visibility
+        content: none;
+    }
+
+    .inner {
+        @include vendor('flex', '1 1 auto');
+        min-height: 0;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        padding: var(--banner-top-space) clamp(2rem, 6vw, 5rem) clamp(1.5rem, 4vh, 3rem);
+
+        &:before {
+            content: '';
+            position: absolute;
+            inset: 0 clamp(2rem, 7vw, 6rem);
+            background-image: url('../../images/tm-logotipo-principal-marrom.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.95;
+        }
     }
     
     // English version uses horizontal simplified logo
     .lang-en & {
-        &:before {
+        .inner:before {
             background-image: url('../../images/tm-logotipo-horizontal-simplificado-marrom.png');
         }
     }
@@ -1641,7 +1648,7 @@
         &:before, &:after {
             @include vendor('transition', 'width 0.25s ease');
             @include vendor('transition-delay', '0.1s');
-            background: _palette(fg-bold);
+            background: site-palette(fg-bold);
             content: '';
             display: block;
             height: 2px;
@@ -1661,7 +1668,7 @@
     }
 
     p {
-        letter-spacing: _size(letter-spacing-alt);
+        letter-spacing: site-size(letter-spacing-alt);
         text-transform: uppercase;
         position: relative;
         z-index: 1;
@@ -1681,11 +1688,11 @@
         font-size: 0.8em;
         height: 8.5em;
         left: 50%;
-        letter-spacing: _size(letter-spacing-alt);
+        letter-spacing: site-size(letter-spacing-alt);
         margin-left: -8.5em;
         opacity: 1;
         outline: 0;
-        padding-left: _size(letter-spacing-alt);
+        padding-left: site-size(letter-spacing-alt);
         position: absolute;
         text-align: center;
         text-transform: uppercase;
@@ -1710,10 +1717,10 @@
 
     &:after {
         @include vendor('pointer-events', 'none');
-        @include vendor('transition', 'opacity #{_duration(fadein)} ease-in-out');
+        @include vendor('transition', 'opacity #{site-duration(fadein)} ease-in-out');
         @include vendor('transition-delay', '0s');
         content: '';
-        background: _palette(bg);
+        background: site-palette(bg);
         display: block;
         width: 100%;
         height: 100%;
@@ -1724,13 +1731,17 @@
     }
 
     @include breakpoint('<=small') {
-        @include padding(7em, 3em);
-        // height: auto;
-        // min-height: 0;
+        padding: 7em 0 0;
+        --banner-top-space: clamp(2rem, 8vh, 3.5rem);
+        --banner-bottom-space: max(1.5rem, calc(env(safe-area-inset-bottom) + 0.5rem));
+        --banner-cta-space: clamp(6rem, 19vh, 8rem);
 
-        &:before {
-            width: 80%;  // reduce to keep CTA clear
-            height: 70%;
+        .inner {
+            padding: var(--banner-top-space) 1.25rem 1rem;
+
+            &:before {
+                inset: 0 0.75rem;
+            }
         }
 
         h2 {
@@ -1755,24 +1766,24 @@
         height: 3px;
         background-color: #5B412E;
         transform: scaleX(0);
-        z-index: 5; /* Ensure lines appear over the background logo */
+        z-index: 1;
+
     }
 
     .banner-line-top {
-        top: 20%;
+        top: var(--banner-top-space);
         transform-origin: left center;
         animation: lineFromLeft 1s forwards ease-in-out;
     }
 
     .banner-line-bottom {
-        bottom: 20%;
+        bottom: var(--banner-cta-space);
         transform-origin: right center;
         animation: lineFromRight 1s forwards ease-in-out;
     }
 
     .banner-cta {
-        margin-top: auto;
-        margin-bottom: clamp(1rem, 2vh, 4.75rem);
+        margin: 0 auto var(--banner-bottom-space);
         align-self: center;
         position: relative;
         z-index: 2;
@@ -1781,16 +1792,20 @@
         align-items: center;
         justify-content: center;
         gap: 0.35em;
-        padding: 1em 3.5em 1.7em;
+        width: clamp(16rem, 32vw, 26rem);
+        max-width: calc(100% - 2rem);
+        min-width: 0;
+        padding: 0.8em 3.5em 1em;
         height: auto;
         line-height: 1.2;
         overflow: visible;
-        background-color: _palette(accent6, bg);
-        color: _palette(accent6, fg-bold);
+        background-color: site-palette(accent6, bg);
+        color: site-palette(accent6, fg-bold);
         box-shadow: none;
-        min-width: 25rem;
         @include vendor('transition', ('opacity 0.45s ease', 'transform 0.45s ease', 'box-shadow 0.2s ease'));
-
+		@include breakpoint('>medium') {
+        	margin: 1 auto var(--banner-bottom-space);
+		}
         &:hover {
             @include vendor('transform', 'translateY(-4px)');
             box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
@@ -1801,18 +1816,18 @@
             display: block;
             width: 1.5em;
             height: 1.5em;
-            margin-top: 0.75em;
+            margin-top: 0.35em;
             background-image: url('../../images/arrow.svg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
             opacity: 0.8;
         }
-
+		
         @include breakpoint('<=small') {
-            margin-bottom: 1.25rem;
-            padding: 0.8em 2.25em 1.4em;
-            min-width: auto;
+            width: min(20rem, calc(100% - 2rem));
+            padding: 0.75em 2.25em 0.95em;
+            gap: 0.25em;
         }
     }
 }
@@ -1829,11 +1844,18 @@
 }
 
 @media screen and (max-width: 768px) and (orientation: landscape) {
-  .banner-line-top {
-    top: 10%;   // move closer to top
+  #banner {
+    --banner-top-space: 2.5rem;
+    --banner-bottom-space: 0.75rem;
+    --banner-cta-space: 5.5rem;
   }
-  .banner-line-bottom {
-    bottom: 10%;  // move closer to bottom
+  #banner .inner {
+    padding-top: 2.5rem;
+    padding-bottom: 0.75rem;
+  }
+  #banner .banner-cta {
+    width: min(19rem, calc(100% - 2rem));
+    padding: 0.65em 2.25em 0.85em;
   }
 }
 
@@ -1924,12 +1946,12 @@ body.is-preload {
 
 			h2 {
 				font-size: 1.75em;
-				margin: 0 0 (_size(element-margin) * 0.25) 0;
+				margin: 0 0 (site-size(element-margin) * 0.25) 0;
 			}
 
 			p {
 				color: inherit;
-				letter-spacing: _size(letter-spacing-alt);
+				letter-spacing: site-size(letter-spacing-alt);
 				text-transform: uppercase;
 				top: 0;
 
@@ -1955,7 +1977,7 @@ body.is-preload {
 
 				h2 {
 					font-size: 1.25em;
-					margin: 0 0 (_size(element-margin) * 0.5) 0;
+					margin: 0 0 (site-size(element-margin) * 0.5) 0;
 				}
 			}
 		}
@@ -1973,31 +1995,31 @@ body.is-preload {
 
 	#footer {
 		@include padding(2em, 0);
-		background-color: darken(_palette(fg), 8);
+		background-color: color.adjust(site-palette(fg), $lightness: -8%);
 		text-align: center;
 
 		.icons {
 			font-size: 1.25em;
 
 			a {
-				color: _palette(fg-light);
+				color: site-palette(fg-light);
 
 				&:hover {
-					color: _palette(fg);
+					color: site-palette(fg);
 				}
 			}
 		}
 
 		.copyright {
-			color: _palette(fg-light);
+			color: site-palette(fg-light);
 			font-size: 0.8em;
-			letter-spacing: _size(letter-spacing-alt);
+			letter-spacing: site-size(letter-spacing-alt);
 			list-style: none;
 			padding: 0;
 			text-transform: uppercase;
 
 			li {
-				border-left: solid 1px _palette(fg-light);
+				border-left: solid 1px site-palette(fg-light);
 				display: inline-block;
 				line-height: 1em;
 				margin-left: 1em;
@@ -2013,7 +2035,7 @@ body.is-preload {
 					color: inherit;
 
 					&:hover {
-						color: _palette(fg);
+						color: site-palette(fg);
 					}
 				}
 
@@ -2049,7 +2071,7 @@ body.is-preload {
 		}
 
 		#footer {
-			background-color: darken(transparentize(_palette(bg), 0.1), 8);
+			background-color: color.adjust(color.adjust(site-palette(bg), $alpha: -0.1), $lightness: -8%);
 		}
 	}
 
@@ -2068,7 +2090,7 @@ body.is-preload {
 			}
 
 			#footer {
-				background-color: darken(_palette(bg), 8);
+				background-color: color.adjust(site-palette(bg), $lightness: -8%);
 			}
 		}
 	}
