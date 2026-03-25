@@ -2393,6 +2393,7 @@ button:disabled,
 .wrapper.style3 {
   background-color: rgb(80.6153846154, 77.7362637363, 50.3846153846);
   color: rgb(211.4038461538, 210.6840659341, 203.8461538462);
+  text-align: center;
 }
 .wrapper.style3 strong, .wrapper.style3 b {
   color: #ffffff;
