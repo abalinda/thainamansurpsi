@@ -84,15 +84,6 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
-				<!-- <h2>Thainá Mansur</h2>
-				<p>O objetivo da análise é que o sujeito olhe para si mesmo, se escute, se olhe e aprenda a lidar
-					melhor com a própria vida e existência
-					<br />
-					</a>
-				</p>
-				<ul class="actions special">
-					<li><a href="#" class="button primary">Agendar</a></li>
-				</ul> -->
 			</div>
 			<div class="banner-line-top"></div>
 			<div class="banner-line-bottom"></div>
@@ -265,7 +256,7 @@
 				<p>Agende sua consulta ou tire suas dúvidas</p>
 			</header>
 			<ul class="actions stacked">
-				<li><a href="https://wa.me/5562995386589?text=Olá! Encontrei seu site e gostaria de mais informações." class="button fit primary" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+				<li><a href="https://wa.me/5562995386589?text=Ol%C3%A1%21%20Encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="button fit primary js-whatsapp-link" target="_blank" rel="noopener noreferrer" data-whatsapp-source="cta">WhatsApp</a></li>
 				<li><a href="mailto:thainamansurgo@gmail.com" class="button fit">E-mail</a></li>
 			</ul>
 		</div>
@@ -283,6 +274,16 @@
 		</ul>
 	</footer>
 
+	<a
+		href="https://wa.me/5562995386589?text=Ol%C3%A1%21%20Encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+		class="whatsapp-float js-whatsapp-link"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="Abrir conversa no WhatsApp"
+		data-whatsapp-source="floating">
+		<img src="images/Digital_Glyph_White_RGB_2026.svg" alt="" aria-hidden="true" />
+	</a>
+
 	</div>
 
 	<!-- Scripts -->
@@ -298,12 +299,15 @@
 	<script>
     document.addEventListener("DOMContentLoaded", function() {
         // PostHog - Track WhatsApp button clicks
-        const whatsappBtn = document.querySelector('a[href^="https://wa.me/"]');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', function() {
-                posthog.capture('contact_button_clicked', { method: 'whatsapp' });
+        const whatsappButtons = document.querySelectorAll('.js-whatsapp-link');
+        whatsappButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                posthog.capture('contact_button_clicked', {
+                    method: 'whatsapp',
+                    source: button.dataset.whatsappSource || 'unknown'
+                });
             });
-        }
+        });
     });
 </script>
 </body>

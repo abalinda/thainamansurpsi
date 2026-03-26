@@ -10,7 +10,8 @@
 		$body = $('body'),
 		$wrapper = $('#page-wrapper'),
 		$banner = $('#banner'),
-		$header = $('#header');
+		$header = $('#header'),
+		$whatsapp = $('.whatsapp-float');
 
 	// Breakpoints.
 		breakpoints({
@@ -74,16 +75,51 @@
 			});
 
 	// Header.
+		var useAltHeader = $header.hasClass('alt'),
+			manageWhatsappOnLanding = $body.hasClass('landing') && $whatsapp.length > 0,
+			setWhatsappVisibility = function(isVisible) {
+				if (!manageWhatsappOnLanding)
+					return;
+
+				$whatsapp
+					.toggleClass('is-visible', isVisible)
+					.attr('aria-hidden', isVisible ? 'false' : 'true');
+
+				if (isVisible)
+					$whatsapp.removeAttr('tabindex');
+				else
+					$whatsapp.attr('tabindex', '-1');
+			};
+
+		if ($whatsapp.length > 0 && !manageWhatsappOnLanding)
+			$whatsapp.attr('aria-hidden', 'false');
+
 		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
+		&&	(useAltHeader || manageWhatsappOnLanding)) {
 
 			$window.on('resize', function() { $window.trigger('scroll'); });
 
 			$banner.scrollex({
 				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
+				initialize:	function() { setWhatsappVisibility(false); },
+				terminate:	function() {
+					if (useAltHeader)
+						$header.removeClass('alt');
+
+					setWhatsappVisibility(true);
+				},
+				enter:		function() {
+					if (useAltHeader)
+						$header.addClass('alt');
+
+					setWhatsappVisibility(false);
+				},
+				leave:		function() {
+					if (useAltHeader)
+						$header.removeClass('alt');
+
+					setWhatsappVisibility(true);
+				}
 			});
 
 		}
