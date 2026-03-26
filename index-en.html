@@ -10,6 +10,23 @@
 		gtag('js', new Date());
 
 		gtag('config', 'AW-18043610032');
+
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof(url) != 'undefined') {
+					window.location = url;
+				}
+			};
+
+			gtag('event', 'conversion', {
+				'send_to': 'AW-18043610032/HuSyCLbtkZAcELDH7ptD',
+				'value': 1.0,
+				'currency': 'USD',
+				'event_callback': callback
+			});
+
+			return false;
+		}
 	</script>
 	
 	<!--// PostHog Analytics -->
@@ -162,7 +179,7 @@
 				<p>Schedule your session or ask questions</p>
 			</header>
 			<ul class="actions stacked">
-				<li><a href="https://wa.me/5562995386589?text=Olá! Encontrei seu site e gostaria de mais informações." class="button fit primary" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+				<li><a href="https://wa.me/5562995386589?text=Ol%C3%A1%21%20Encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="button fit primary js-whatsapp-link" target="_blank" rel="noopener noreferrer" data-whatsapp-source="cta">WhatsApp</a></li>
 				<li><a href="mailto:thainamansurgo@gmail.com" class="button fit">E-mail</a></li>
 			</ul>
 		</div>
@@ -190,6 +207,27 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js?v=20260326"></script>
+
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Track WhatsApp button clicks.
+        const whatsappButtons = document.querySelectorAll('.js-whatsapp-link');
+        whatsappButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                if (typeof gtag_report_conversion === 'function') {
+                    gtag_report_conversion();
+                }
+
+                if (window.posthog) {
+                    posthog.capture('contact_button_clicked', {
+                        method: 'whatsapp',
+                        source: button.dataset.whatsappSource || 'unknown'
+                    });
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 

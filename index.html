@@ -10,6 +10,23 @@
 		gtag('js', new Date());
 
 		gtag('config', 'AW-18043610032');
+
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof(url) != 'undefined') {
+					window.location = url;
+				}
+			};
+
+			gtag('event', 'conversion', {
+				'send_to': 'AW-18043610032/HuSyCLbtkZAcELDH7ptD',
+				'value': 1.0,
+				'currency': 'USD',
+				'event_callback': callback
+			});
+
+			return false;
+		}
 	</script>
 	
 	<!--// PostHog Analytics -->
@@ -298,14 +315,20 @@
 
 	<script>
     document.addEventListener("DOMContentLoaded", function() {
-        // PostHog - Track WhatsApp button clicks
+        // Track WhatsApp button clicks across both CTAs.
         const whatsappButtons = document.querySelectorAll('.js-whatsapp-link');
         whatsappButtons.forEach(function(button) {
             button.addEventListener('click', function() {
-                posthog.capture('contact_button_clicked', {
-                    method: 'whatsapp',
-                    source: button.dataset.whatsappSource || 'unknown'
-                });
+                if (typeof gtag_report_conversion === 'function') {
+                    gtag_report_conversion();
+                }
+
+                if (window.posthog) {
+                    posthog.capture('contact_button_clicked', {
+                        method: 'whatsapp',
+                        source: button.dataset.whatsappSource || 'unknown'
+                    });
+                }
             });
         });
     });
